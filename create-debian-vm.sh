@@ -31,3 +31,10 @@ INTERFACE=$(Ip route | grep default | awk '{print $5}')
 echo "Using network interface: $INTERFACE"
 VBoxManage modifyvm "$VM_NAME" --nic1 bridged --bridgeadapter1 "$INTERFACE"
 
+# Hard Disk Configuration
+Disk_PATH="$HOME/VirtualBox VMs/$VM_NAME/$VM_NAME.vdi"
+VBoxManage createmedium disk --filename "$DISK_PATH" --size $DISK_SIZE_MB --format VDI
+VBoxManage storagectl "$VM_NAME" --name "SATA Controller" --add sata --controller IntelAhci
+VBoxManage storageattach "$VM_NAME" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$DISK_PATH"
+
+
