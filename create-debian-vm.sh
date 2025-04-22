@@ -41,4 +41,8 @@ VBoxManage storageattach "$VM_NAME" --storagectl "SATA Controller" --port 0 --de
 VBoxManage storagectl "$VM_NAME" --name "IDE Controller" --add ide
 VBoxManage storageattch "$VM_NAME" --storagectl "IDE Controller" --port 0 --device 0 --type dvddrive --medium emptydrive
 
+# Shared Folder
+mkdir -p "$SHARED_FOLDER"
+VBoxManage sharedfolder add "$VM_NAME" --name "Shared" --hostpath "$SHARED_FOLDER" --automount
+
 
