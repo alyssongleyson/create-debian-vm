@@ -16,3 +16,9 @@ Since I frequently use VMs — especially Debian-based ones — I created this s
 - Adds shared folder with host machine
 - Attaches empty CD/DVD drive for ISO boot
 
+## Requirements
+
+- [VirtualBox](https://www.virtualbox.org/) installed and accessible via terminal
+- Bash shell
+- Linux host system
+
