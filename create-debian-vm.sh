@@ -1,0 +1,15 @@
+#!/bin/bash
+
+###################################################################
+# Script Name:	create-debian-vm.sh
+# Description:	Script for creating virtual machine with debian
+# Author:	Álysson Gleyson da Silva
+###################################################################
+
+
+
+# VM Settings
+VM_NAME="Debian"
+RAM_MB=2048
+DISK_SIZE_MB=20280
+SHARED_FOLDER="$HOME/VM-shared-folder"
