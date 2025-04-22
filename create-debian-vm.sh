@@ -26,4 +26,8 @@ VBoxManage modifyvm "$VM_NAME" \
 	--accelerate3d on \
 	--clipboard bidirectional
 
+# Rede Settings
+INTERFACE=$(Ip route | grep default | awk '{print $5}')
+echo "Using network interface: $INTERFACE"
+VBoxManage modifyvm "$VM_NAME" --nic1 bridged --bridgeadapter1 "$INTERFACE"
 
