@@ -37,4 +37,8 @@ VBoxManage createmedium disk --filename "$DISK_PATH" --size $DISK_SIZE_MB --form
 VBoxManage storagectl "$VM_NAME" --name "SATA Controller" --add sata --controller IntelAhci
 VBoxManage storageattach "$VM_NAME" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$DISK_PATH"
 
+# CD/DVD Controller
+VBoxManage storagectl "$VM_NAME" --name "IDE Controller" --add ide
+VBoxManage storageattch "$VM_NAME" --storagectl "IDE Controller" --port 0 --device 0 --type dvddrive --medium emptydrive
+
 
