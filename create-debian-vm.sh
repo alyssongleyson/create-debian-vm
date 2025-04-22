@@ -13,3 +13,7 @@ VM_NAME="Debian"
 RAM_MB=2048
 DISK_SIZE_MB=20280
 SHARED_FOLDER="$HOME/VM-shared-folder"
+
+#VM Creation
+echo "Creating VM '$VM_NAME'..."
+VBoxManage createvm --name "$VM_NAME" --ostype "Debian_64" --register
