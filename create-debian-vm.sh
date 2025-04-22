@@ -14,6 +14,16 @@ RAM_MB=2048
 DISK_SIZE_MB=20280
 SHARED_FOLDER="$HOME/VM-shared-folder"
 
-#VM Creation
+# VM Creation
 echo "Creating VM '$VM_NAME'..."
 VBoxManage createvm --name "$VM_NAME" --ostype "Debian_64" --register
+
+# Hardware Settings
+VBoxManage modifyvm "$VM_NAME" \
+	--memory $RAM_MB \
+	--vram 256 \
+	--graphicscontroller vmsvga \
+	--accelerate3d on \
+	--clipboard bidirectional
+
+
