@@ -22,3 +22,23 @@ Since I frequently use VMs — especially Debian-based ones — I created this s
 - Bash shell
 - Linux host system
 
+## Usage
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/alyssongleyson/create-debian-vm.git
+   cd create-debian-vm
+   ```
+
+2. Make the script executable:
+	```bash
+	chmod +x create-debian-vm.sh
+	```
+
+3. Run the script:
+	```bash
+	./create-debian-vm.sh
+	```
+	
+
+
