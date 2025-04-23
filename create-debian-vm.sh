@@ -45,4 +45,5 @@ VBoxManage storageattach "$VM_NAME" --storagectl "IDE Controller" --port 0 --dev
 mkdir -p "$SHARED_FOLDER"
 VBoxManage sharedfolder add "$VM_NAME" --name "Shared" --hostpath "$SHARED_FOLDER" --automount
 
-
+# Finalizing the script
+echo "'$VM_NAME' VM created successfully!" && date
